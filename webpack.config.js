@@ -18,7 +18,12 @@ module.exports = {
           loader: "babel-loader"
         },
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
     ]
   },
   plugins: [
