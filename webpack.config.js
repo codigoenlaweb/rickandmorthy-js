@@ -29,6 +29,10 @@ module.exports = {
           "postcss-loader",
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg)$/i,
+        type: 'asset/resource',
+      },
     ]
   },
   plugins: [
