@@ -7,12 +7,15 @@
     "tailwind": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
     "webpack-prod": "npx webpack --mode production --config webpack.config.js",
     "webpack-dev": "npx webpack --mode development --config webpack.config.js"
-
   },
   "keywords": [],
   "author": "Jesus Olmos",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
     "tailwindcss": "^3.0.23",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2"
