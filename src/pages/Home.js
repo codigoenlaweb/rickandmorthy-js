@@ -1,10 +1,10 @@
-import getData from '../utils/getData.js'
+import getData from '@utils/getData.js'
 
 const Home = async () => {
   const characters = await getData()
   let template = ''
   characters.results.map(character => {
-    template += `
+    template +=`
     <article class="bg-white w-full rounded-xl shadow-md mb-4">
       <a href="#/${character.id}">
         <img

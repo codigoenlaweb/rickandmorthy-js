@@ -1,5 +1,5 @@
-import getData from "../utils/getData.js"
-import getHas from "../utils/getHas.js"
+import getData from "@utils/getData.js"
+import getHas from "@utils/getHas.js"
 
 const Character = async () => {
   const character = await getData(getHas())

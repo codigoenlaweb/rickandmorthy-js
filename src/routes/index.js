@@ -1,9 +1,9 @@
-import Header from '../templates/Header.js';
-import Home from '../pages/Home.js';
-import Character from '../pages/Character.js';
-import Error404 from '../pages/Error404.js';
-import getHas from '../utils/getHas.js';
-import resolveRoutes from '../utils/resolveRoutes.js';
+import Header from '@template/Header.js';
+import Home from '@pages/Home.js';
+import Character from '@pages/Character.js';
+import Error404 from '@pages/Error404.js';
+import getHas from '@utils/getHas.js';
+import resolveRoutes from '@utils/resolveRoutes.js';
 
 
 const routes = {
