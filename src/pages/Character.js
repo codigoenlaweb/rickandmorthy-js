@@ -1,15 +1,19 @@
 import getData from "@utils/getData.js"
 import getHas from "@utils/getHas.js"
+import closeIco from "@image/close.svg"
 
 const Character = async () => {
   const character = await getData(getHas())
 
   const view =`
-  <section class="px-4 py-2">
-    <div class="bg-white px-4 py-2 rounded-lg shadow">
+  <section class="px-4 py-2 sm:px-8 sm:py-4">
+    <div class="bg-white px-4 py-2 rounded-lg shadow max-w-screen-lg mx-auto relative">
+      <a class="absolute top-2 right-3" href="#" id="aClose">
+        <img class=" w-7 sm:w-9" src="${closeIco}" alt="close character">
+      </a>
       <article>
         <img
-          class="mx-auto mt-2 rounded-lg w-4/5 max-w-xs"
+          class="mx-auto mt-8 rounded-lg w-4/5 max-w-xs"
           src="${character.image}"
           alt="name"
         />
