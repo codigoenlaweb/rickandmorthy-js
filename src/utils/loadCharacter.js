@@ -45,6 +45,7 @@ class loadCharacter {
   callback = async (entries, observer) => {
     if (this.activate & entries[0].isIntersecting) {
       this.render();
+      console.log('hola');
     }
   };
 
