@@ -29,6 +29,7 @@ window.addEventListener('hashchange', () => {
         }
         opacity()
     }, 200);
+    load.rewind()
 });
 
 

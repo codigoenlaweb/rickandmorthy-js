@@ -1,8 +1,8 @@
 import router from "@routes";
 
 class loadCharacter {
-  page = 1;
-  activate = false;
+  _page = 1;
+  _activate = false;
   URL = "https://rickandmortyapi.com/api/character/";
   options = {
     rootMargin: "400px",
@@ -45,13 +45,36 @@ class loadCharacter {
   callback = async (entries, observer) => {
     if (this.activate & entries[0].isIntersecting) {
       this.render();
-      console.log('hola');
     }
   };
 
   observer() {
     const observe = new IntersectionObserver(this.callback, this.options);
     observe.observe(document.querySelector("#load"));
+  }
+
+  rewind() {
+    this.page = 1
+  }
+
+  // get and setter
+
+  // PAGE
+  get page() {
+    return this._page
+  }
+
+  set page(nmr) {
+    return this._page = nmr
+  }
+
+  // ACTIVE
+  get active() {
+    return this._activate
+  }
+
+  set active(bool) {
+    return this._activate = bool
   }
 }
 
