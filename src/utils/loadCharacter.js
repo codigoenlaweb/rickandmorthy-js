@@ -1,4 +1,3 @@
-
 class loadCharacter {
   _page = 1;
   _maxPage = 42;
@@ -50,14 +49,14 @@ class loadCharacter {
 
   callback = async (entries, observer) => {
     if (document.querySelector("#box-home")) {
-      if (entries[0].isIntersecting & this.page < this.maxPage) {
+      if (entries[0].isIntersecting & (this.page < this.maxPage)) {
         this.render();
       }
     }
 
     if (document.querySelector("#box-filter-character")) {
-      if (entries[0].isIntersecting & this.pageFilter < this.maxPageFilter) {
-          this.loadingFilterCharacter();
+      if (entries[0].isIntersecting & (this.pageFilter < this.maxPageFilter)) {
+        this.loadingFilterCharacter();
       }
     }
   };
@@ -79,9 +78,12 @@ class loadCharacter {
       document.querySelector("#loading").classList.add("opacity-80");
       this.pageFilter = 0;
       this.responseFilter();
+
       setTimeout(() => {
-        document.querySelector("#loading").classList.remove("opacity-80");
-        document.querySelector("#loading").classList.add("opacity-0");
+        if (document.querySelector("#loading")) {
+          document.querySelector("#loading").classList.remove("opacity-80");
+          document.querySelector("#loading").classList.add("opacity-0");
+        }
       }, 1300);
     }
   };
@@ -95,7 +97,7 @@ class loadCharacter {
     const response = await fetch(urlResult);
     const data = await response.json();
 
-    this.maxPageFilter  = data.info.pages;
+    this.maxPageFilter = data.info.pages;
     return data;
   };
 

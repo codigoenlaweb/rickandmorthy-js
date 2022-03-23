@@ -5,7 +5,6 @@ import opacity from "@utils/opacity.js";
 import changeRoute from "@utils/changeRoute.js";
 import loadCharacter from "@utils/loadCharacter.js";
 import loadHeader from "@utils/loadHeader";
-import linksClick from "@utils/linksClick";
 import loadLinks from "@utils/loadLinks"
 
 // Inicializacion
@@ -19,15 +18,7 @@ window.addEventListener("load", async () => {
   let route = await router();
   await load.observer();
 
-  if (route === "/") {
-    loadLinks(document.querySelector("#linkHome"))
-  }
-  if (route === "/:about") {
-    loadLinks(document.querySelector("#linkAbout"))
-  }
-  if (route === "/:filter") {
-    loadLinks(document.querySelector("#linkFilter"))
-  }
+  loadLinks(route)
 });
 
 window.addEventListener("hashchange", () => {
@@ -35,13 +26,13 @@ window.addEventListener("hashchange", () => {
   setTimeout(async () => {
     await changeRoute();
     const route = await router();
+    loadLinks(route)
     opacity();
   }, 200);
   load.rewind();
 });
 
 body.addEventListener("click", (e) => {
-  linksClick(e)
   load.clickFilter(e)
 });
 
