@@ -15,6 +15,11 @@ const resolveRoutes = (route) => {
     return validRoute;
   }
 
+  if (route === "filterc") {
+    let validRoute = "/:filterc/:id";
+    return validRoute;
+  }
+
   if (!isNaN(route)) {
     let validRoute = "/:id";
     return validRoute;

@@ -5,12 +5,14 @@ import getHas from '@utils/getHas.js';
 import resolveRoutes from '@utils/resolveRoutes.js';
 import About from '@pages/About.js';
 import Filter from '@pages/Filter.js';
+import FilterCharacter from '@pages/FilterCharacter';
 
 const routes = {
     '/': Home,
     '/:id':Character,
     '/:about':About,
     '/:filter':Filter,
+    '/:filterc/:id':FilterCharacter
 }
 
 const router = async () => {

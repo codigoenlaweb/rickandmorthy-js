@@ -123,7 +123,7 @@ class loadCharacter {
     characters.results.map((character) => {
       template += `
         <article class="bg-white w-full rounded-xl shadow-md mb-4">
-          <a href="#/${character.id}">
+          <a href="#/filterc/${character.id}">
             <img
             class="w-full h-52 md:h-60 lg:h-72 rounded-t-xl object-cover"
             src="${character.image}"
