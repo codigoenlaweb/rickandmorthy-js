@@ -5,23 +5,23 @@ const linksClick = (e) => {
   const linkAbout = document.querySelector("#linkAbout");
 
   if (link === linkHome || link === linkFilter || link === linkAbout) {
-    if (linkHome.classList.contains("text-pink-700") & (linkHome != link)) {
-      linkHome.classList.remove("text-pink-700");
-      linkHome.classList.add("text-gray-400");
+    if (linkHome.classList.contains("text-pink-600") & (linkHome != link)) {
+      linkHome.classList.remove("text-pink-600");
+      linkHome.classList.add("text-gray-500");
     }
 
-    if (linkFilter.classList.contains("text-pink-700") & (linkFilter != link)) {
-      linkFilter.classList.remove("text-pink-700");
-      linkFilter.classList.add("text-gray-400");
+    if (linkFilter.classList.contains("text-pink-600") & (linkFilter != link)) {
+      linkFilter.classList.remove("text-pink-600");
+      linkFilter.classList.add("text-gray-500");
     }
 
-    if (linkAbout.classList.contains("text-pink-700") & (linkAbout != link)) {
-      linkAbout.classList.remove("text-pink-700");
-      linkAbout.classList.add("text-gray-400");
+    if (linkAbout.classList.contains("text-pink-600") & (linkAbout != link)) {
+      linkAbout.classList.remove("text-pink-600");
+      linkAbout.classList.add("text-gray-500");
     }
 
-    link.classList.add("text-pink-700");
-    link.classList.remove("text-gray-400");
+    link.classList.add("text-pink-600");
+    link.classList.remove("text-gray-500");
   }
 };
 

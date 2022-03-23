@@ -20,7 +20,6 @@ window.addEventListener("load", async () => {
   await load.observer();
 
   if (route === "/") {
-    load.activate = true;
     loadLinks(document.querySelector("#linkHome"))
   }
   if (route === "/:about") {
@@ -33,13 +32,9 @@ window.addEventListener("load", async () => {
 
 window.addEventListener("hashchange", () => {
   opacity();
-  load.activate = false;
   setTimeout(async () => {
     await changeRoute();
     const route = await router();
-    if (route === "/") {
-      load.activate = true;
-    }
     opacity();
   }, 200);
   load.rewind();
@@ -49,3 +44,4 @@ body.addEventListener("click", (e) => {
   linksClick(e)
   load.clickFilter(e)
 });
+

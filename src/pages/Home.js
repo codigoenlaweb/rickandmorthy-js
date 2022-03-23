@@ -22,7 +22,7 @@ const Home = async () => {
   })
 
   const view = `
-  <div class="py-2 px-4 sm:px-8 sm:py-4">
+  <div id="box-home" class="py-2 px-4 sm:px-8 sm:py-4">
     <div id="box-card" class=" grid grid-cols-2 gap-x-2 sm:grid-cols-3 md:gap-x-6 max-w-screen-lg mx-auto">
       ${template}
     </div>

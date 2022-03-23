@@ -10,7 +10,7 @@ const routes = {
     '/': Home,
     '/:id':Character,
     '/:about':About,
-    '/:filter':Filter
+    '/:filter':Filter,
 }
 
 const router = async () => {

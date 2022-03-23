@@ -2,7 +2,7 @@ import loading from "@image/loading.svg";
 
 const Filter = () => {
     const view = `
-    <div id="loading" class="flex text-pink-600 transition duration-300 ease-linear font-semibold absolute top-1 right-1 opacity-0 bg-cyan-500 px-4 py-2 rounded-lg">loading<img src="${loading}" alt="loading"></div>
+    <div id="loading" class="flex text-white transition duration-300 ease-linear font-semibold absolute top-1 right-1 opacity-0 bg-cyan-500 px-4 py-2 rounded-lg">loading<img src="${loading}" alt="loading"></div>
     <section class="py-2 px-4 sm:px-8 sm:py-4">
       <article
         class="flex flex-col bg-white rounded-lg shadow-md w-full px-2 py-2 sm:py-3 text-center" id="box-filter"
