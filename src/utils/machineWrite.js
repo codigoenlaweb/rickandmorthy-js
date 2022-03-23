@@ -1,4 +1,4 @@
-const sentence = " and i'm the creator of this website!."
+const sentence = " and i'm the creator of this website!"
 
 const machineWrite = () => {
     let i = 0
@@ -9,7 +9,6 @@ const machineWrite = () => {
                 document.querySelector("#machine-write").textContent += sentenceArray[i]
                 i++;
             }
-            console.log('h');
             if (i === sentenceArray.length) {
                 clearInterval(printsentence);
                 
@@ -19,7 +18,6 @@ const machineWrite = () => {
             i = 0
         }
     }, 190);
-
 }
 
 
