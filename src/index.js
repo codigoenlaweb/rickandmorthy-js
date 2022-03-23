@@ -6,6 +6,7 @@ import changeRoute from "@utils/changeRoute.js";
 import loadCharacter from "@utils/loadCharacter.js";
 import loadHeader from "@utils/loadHeader";
 import loadLinks from "@utils/loadLinks"
+import machineWrite from "@utils/machineWrite";
 
 // Inicializacion
 const body = document.querySelector("#body");
@@ -17,8 +18,8 @@ window.addEventListener("load", async () => {
   loadHeader();
   let route = await router();
   await load.observer();
-
-  loadLinks(route)
+  loadLinks(route);
+  machineWrite()
 });
 
 window.addEventListener("hashchange", () => {
@@ -28,6 +29,9 @@ window.addEventListener("hashchange", () => {
     const route = await router();
     loadLinks(route)
     opacity();
+    if (route === '/:about') {
+      machineWrite()
+    }
   }, 200);
   load.rewind();
 });
