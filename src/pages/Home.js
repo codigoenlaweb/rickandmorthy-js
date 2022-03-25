@@ -13,8 +13,8 @@ const Home = async () => {
           alt="name"
         />
         <div class="flex flex-wrap justify-between px-4 py-2 md:py-4 items-center">
-          <h2 class=" text-pink-700 text-lg mr-1">${character.name}</h2>
-          <h2 class=" text-gray-400 text-sm">${character.species}</h2>
+          <h2 class="text-pink-700 text-lg mr-1">${character.name}</h2>
+          <h2 class="text-gray-500 text-sm">${character.species}</h2>
         </div>
       </a>
     </article> 

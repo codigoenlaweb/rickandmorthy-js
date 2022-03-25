@@ -3,6 +3,7 @@ class loadCharacter {
   _maxPage = 42;
   _pageFilter = 0;
   _maxPageFilter = 0;
+  _loading = false;
   URL = "https://rickandmortyapi.com/api/character/";
   nameOfCharacter = "";
   statusOfCharacter = "";
@@ -35,8 +36,8 @@ class loadCharacter {
               alt="name"
             />
             <div class="flex flex-wrap justify-between px-4 py-2 md:py-4 items-center">
-              <h2 class=" text-pink-700 text-lg mr-1">${character.name}</h2>
-              <h2 class=" text-gray-400 text-sm">${character.species}</h2>
+              <h2 class="text-pink-700 text-lg mr-1">${character.name}</h2>
+              <h2 class="text-gray-500 text-sm">${character.species}</h2>
             </div>
           </a>
         </article> 
@@ -77,7 +78,10 @@ class loadCharacter {
       document.querySelector("#loading").classList.remove("opacity-0");
       document.querySelector("#loading").classList.add("opacity-80");
       this.pageFilter = 0;
-      this.responseFilter();
+      if (!this._loading) {
+        this._loading = true;
+        this.responseFilter();
+      }
 
       setTimeout(() => {
         if (document.querySelector("#loading")) {
@@ -96,8 +100,9 @@ class loadCharacter {
     const urlResult = `${this.URL}?page=${this.pageFilter}&name=${this.nameOfCharacter}&status=${this.statusOfCharacter}`;
     const response = await fetch(urlResult);
     const data = await response.json();
-
-    this.maxPageFilter = data.info.pages;
+    if (data.info.pages) {
+      this.maxPageFilter = data.info.pages;
+    }
     return data;
   };
 
@@ -114,9 +119,20 @@ class loadCharacter {
         document
           .querySelector("#box-filter-character")
           .classList.remove("opacity-0");
+        this._loading = false;
       }, 0);
     } catch (e) {
-      console.log(e);
+      if (boxFilterCharacter) {
+        boxFilterCharacter.remove();
+      }
+
+      this.character404();
+
+      document
+        .querySelector("#box-filter-character")
+        .classList.remove("opacity-0");
+
+      this._loading = false;
     }
   };
 
@@ -132,8 +148,8 @@ class loadCharacter {
             alt="name"
             />
             <div class="flex flex-wrap justify-between px-4 py-2 md:py-4 items-center">
-              <h2 class=" text-pink-700 text-lg mr-1">${character.name}</h2>
-              <h2 class=" text-gray-400 text-sm">${character.species}</h2>
+              <h2 class="text-pink-700 text-lg mr-1">${character.name}</h2>
+              <h2 class="text-gray-500 text-sm">${character.species}</h2>
             </div>
           </a>
         </article> 
@@ -166,7 +182,7 @@ class loadCharacter {
             />
             <div class="flex flex-wrap justify-between px-4 py-2 md:py-4 items-center">
               <h2 class=" text-pink-700 text-lg mr-1">${character.name}</h2>
-              <h2 class=" text-gray-400 text-sm">${character.species}</h2>
+              <h2 class=" text-gray-500 text-sm">${character.species}</h2>
             </div>
           </a>
         </article> 
@@ -175,6 +191,20 @@ class loadCharacter {
     document
       .querySelector("#box-card")
       .insertAdjacentHTML("beforeend", template);
+  };
+
+  character404 = async () => {
+    const view = `
+    <div id="box-filter-character" class="opacity-0 transition duration-700 ease-linear py-2 sm:py-4">
+      <div id="box-card" class="max-w-screen-lg mx-auto">
+        <p class="font-bold py-2 w-full text-center mt-2 text-pink-600 text-2xl md:text-3xl">Character not found (≥o≤)</p>
+      </div>
+    </div>
+    `;
+    console.log(document.querySelector("#box-filter"));
+    await document
+      .querySelector("#box-filter")
+      .insertAdjacentHTML("afterend", view);
   };
 
   /* get and setter */
