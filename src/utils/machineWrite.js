@@ -11,7 +11,10 @@ const machineWrite = () => {
             }
             if (i === sentenceArray.length) {
                 clearInterval(printsentence);
-                
+                document.querySelector("#msmMachineWriteComplete").classList.add("scale-110")
+                setTimeout(() => {
+                    document.querySelector("#msmMachineWriteComplete").classList.remove("scale-110")
+                }, 320);
             }
         }else{
             clearInterval(printsentence)
