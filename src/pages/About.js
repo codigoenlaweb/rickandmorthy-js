@@ -9,13 +9,13 @@ const About = () => {
         <h2 class="text-xl md:text-2xl text-cyan-600 mb-4 font-bold font-mono animate-pulse">A world of magic behind a button</h2>
         <img class="contrast-100 md:w-1/3 max-w-xs rounded-lg" src="${olmos}" alt="profile">
 
-        <h2 id='msmMachineWriteComplete' class="mt-4 md:mt-6 text-pink-600 text-lg md:text-xl font-mono transition duration-300 ease-linear">!Hi, i'm Jesus Olmos<p id="machine-write"></p></h2>
+        <h2 id='msmMachineWriteComplete' class="mt-4 md:mt-6 text-pink-600 text-lg md:text-xl font-mono transition duration-300 ease-linear">¡Hi!, i'm Jesús Olmos<p id="machine-write"></p></h2>
 
         <h3 class="md:mt-2 text-gray-600">
-          I am a Full stack developer focused on the Backend with experience in Web development.
-          I am looking to collaborate in different areas of a project, whether in the development
-          of Restful APIS or 100% dynamic web applications, I am interested in learning new technologies
-          and languages that help me progress as a developer and provide value to the company.
+          I am a full stack developer focused on the back-end with experience in web development.
+          I seek to collaborate in different areas of a project, from developing Restful APIs to
+          100% dynamic web applications. I am interested in learning new technologies and languages
+          that help me grow as a developer and bring value to the enterprise.
         </h3>
       </article>
 

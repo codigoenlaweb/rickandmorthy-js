@@ -1,4 +1,4 @@
-const sentence = " and i'm the creator of this website!"
+const sentence = " and i'm the creator of this website"
 
 const machineWrite = () => {
     let i = 0
