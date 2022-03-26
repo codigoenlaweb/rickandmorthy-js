@@ -4,7 +4,7 @@ const About = () => {
     const view = `
     <section class="py-2 px-4 sm:px-8 sm:py-4">
       <article
-        class="mb-4 md:mb-8 flex flex-col items-center bg-white rounded-md shadow-md w-full py-2 px-4 sm:px-8 sm:py-4 text-center"
+        class="max-w-screen-lg mx-auto mb-4 md:mb-8 flex flex-col items-center bg-white rounded-md shadow-md w-full py-2 px-4 sm:px-8 sm:py-4 text-center"
       >
         <h2 class="text-xl md:text-2xl text-cyan-600 mb-4 font-bold font-mono animate-pulse">A world of magic behind a button</h2>
         <img class="contrast-100 md:w-1/3 max-w-xs rounded-lg" src="${olmos}" alt="profile">
@@ -15,12 +15,12 @@ const About = () => {
           I am a full stack developer focused on the back-end with experience in web development.
           I seek to collaborate in different areas of a project, from developing Restful APIs to
           100% dynamic web applications. I am interested in learning new technologies and languages
-          that help me grow as a developer and bring value to the enterprise.
+          that help me to grow as a developer and bring value to the enterprise.
         </h3>
       </article>
 
       <article
-        class="flex flex-col bg-white rounded-md shadow-md w-full py-2 px-4 sm:px-8 sm:py-4 text-center"
+        class="mb-2 md:mb-4 max-w-screen-lg mx-auto flex flex-col bg-white rounded-md shadow-md w-full py-2 px-4 sm:px-8 sm:py-4 text-center"
       >
         <h2 class="text-xl md:text-2xl text-cyan-600 mb-2 font-bold font-mono animate-pulse">That was used to make this website</h2>
 
