@@ -1,6 +1,6 @@
 <h1 align="center">Rick and Morty js</h1>
 
-![View project](https://github.com/codigoenlaweb/gifexpertapp/tree/master/src/assets/images/imgreadme1.jpeg)
+![View project](https://github.com/codigoenlaweb/rickandmorthy-js/blob/master/src/assets/images/imgreadme1.jpeg)
 
 <h4 align="center">Your web wiki to know all the data of the characters of rick and morty</h4>
 <div align="center">
